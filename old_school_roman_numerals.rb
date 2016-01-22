@@ -1,5 +1,4 @@
-#def old_roman_numberals
-	numeral = gets.to_i
+def old_roman_numberals numeral 
 	results = []
 	if numeral > 9999
 		return "This number is too big!"
@@ -33,4 +32,4 @@
 		results.push('I')
 	end
 	puts results.join
-#end
+end
