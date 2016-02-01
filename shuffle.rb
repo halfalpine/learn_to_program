@@ -22,15 +22,18 @@ def recursive_shuffle unshuffled, shuffled
 	dumb_variable = unshuffled.length
 	randomizer = rand(dumb_variable)
 	puts dumb_variable
+	puts randomizer
+	puts still_unshuffled
 	if unshuffled.length <= 0
-		return shuffled
+		return "shuffled not working"
 	end
-	(0...dumb_variable).each do |i|
-		#neither of these array items are getting pushed
-		if i == randomizer
-			shuffled << unshuffled.at(i)
+	for i in (0...dumb_variable)
+		#for some reason, the shuffled array is not getting pushed
+		puts "i = " + i.to_s
+		if randomizer == i
+			shuffled.push(unshuffled.at(i))
 		else
-			still_unshuffled << unshuffled.at(i)
+			still_unshuffled.push(unshuffled.at(i))
 		end
 	end
 	recursive_shuffle still_unshuffled, shuffled
