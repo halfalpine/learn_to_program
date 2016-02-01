@@ -17,15 +17,16 @@ end
 
 def recursive_shuffle unshuffled, shuffled
 	still_unshuffled = []
-	randomizer = rand(some_array.length)
+	dumb_variable = unshuffled.length
+	randomizer = rand(dumb_variable)
 	if unshuffled.length <= 0
 		return shuffled
 	end
-	unshuffled.each do |array_item|
-		if array_item.index == randomizer
-			shuffled.push array_item[randomizer]
+	(0...dumb_variable).each do |i|
+		if i = randomizer
+			shuffled.push unshuffled[i]
 		else
-			still_unshuffled.push array_item
+			still_unshuffled.push unshuffled[i]
 		end
 	end
 	recursive_shuffle still_unshuffled, shuffled
