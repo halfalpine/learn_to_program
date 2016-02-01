@@ -20,9 +20,8 @@ def recursive_shuffle unshuffled, shuffled
 		return shuffled
 	end
 	still_unshuffled = []
-	dumb_variable = unshuffled.length
-	randomizer = rand(dumb_variable)
-	(0...dumb_variable).each do |i|
+	randomizer = rand(unshuffled.length)
+	(0...unshuffled.length).each do |i|
 		if randomizer == i
 			item_moved = unshuffled.at(i) 
 			shuffled.push item_moved
