@@ -9,6 +9,26 @@ Question: Now test for it
 	redundant: trust the language to generate a true random number
 =end
 
-def shuffle some_array
+test_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+def shuffle some_array
+	recursive_shuffle some_array, []
 end
+
+def recursive_shuffle unshuffled, shuffled
+	still_unshuffled = []
+	randomizer = rand(some_array.length)
+	if unshuffled.length <= 0
+		return shuffled
+	end
+	unshuffled.each do |array_item|
+		if array_item.index == randomizer
+			shuffled.push array_item[randomizer]
+		else
+			still_unshuffled.push array_item
+		end
+	end
+	recursive_shuffle still_unshuffled, shuffled
+end
+
+shuffle test_array
