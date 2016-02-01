@@ -12,21 +12,25 @@ Question: Now test for it
 test_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 def shuffle some_array
+	puts "method 1 ok"
 	recursive_shuffle some_array, []
 end
 
 def recursive_shuffle unshuffled, shuffled
+	puts "method 2 initialized"
 	still_unshuffled = []
 	dumb_variable = unshuffled.length
 	randomizer = rand(dumb_variable)
+	puts dumb_variable
 	if unshuffled.length <= 0
 		return shuffled
 	end
 	(0...dumb_variable).each do |i|
-		if i = randomizer
-			shuffled.push unshuffled[i]
+		#neither of these array items are getting pushed
+		if i == randomizer
+			shuffled << unshuffled.at(i)
 		else
-			still_unshuffled.push unshuffled[i]
+			still_unshuffled << unshuffled.at(i)
 		end
 	end
 	recursive_shuffle still_unshuffled, shuffled
