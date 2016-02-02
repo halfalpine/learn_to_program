@@ -1,6 +1,10 @@
+#Add a 'thousands' function
+#Add a 'millions' function
+#Optional: (if educational) add billions, trillions
+
 def english_number number 
 	
-	if number > 0
+	if number < 0
 		return 'Please enter a number zero or greater.'
 	end
 	if number == 0
@@ -17,7 +21,7 @@ def english_number number
 	left = left - write * 100
 	if write > 0 
 		hundreds = english_number write
-		num_string = num_string + hundreds + 'hundred'
+		num_string = num_string + hundreds + ' hundred'
 		if left > 0 
 			num_string = num_string + ' '
 		end
@@ -44,3 +48,13 @@ def english_number number
 	end
 	num_string
 end
+
+puts english_number(0)
+puts english_number(10)
+puts english_number(11)
+puts english_number(32)
+puts english_number(101)
+puts english_number(324)
+puts english_number(3211)
+
+
