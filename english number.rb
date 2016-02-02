@@ -17,6 +17,16 @@ def english_number number
 	teenagers = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
 	left = number
 	
+	write = left / 1000
+	left = left - write * 1000
+	if write > 0
+		thousands = english_number write
+		num_string = num_string + thousands + ' thousand'
+		if left > 0
+			num_string = num_string + ' '
+		end
+	end
+
 	write = left / 100
 	left = left - write * 100
 	if write > 0 
